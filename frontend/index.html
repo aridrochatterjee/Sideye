@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SideEye</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <svg class="eye-glyph" id="eyeGlyph" viewBox="0 0 48 28" aria-hidden="true">
+        <path class="eye-lid" d="M2 14 C 12 2, 36 2, 46 14 C 36 26, 12 26, 2 14 Z" />
+        <circle class="eye-pupil" id="eyePupil" cx="24" cy="14" r="6" />
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">SideEye</span>
+        <span class="brand-tagline">a rule-based chatbot, judging your code choices</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button class="dossier-toggle" id="dossierToggle" type="button" aria-label="Toggle case file">Case File</button>
+      <div class="mood-badge" id="moodBadge">
+        <span class="mood-dot" id="moodDot"></span>
+        <span class="mood-label" id="moodLabel">deadpan</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="dossier" id="dossier">
+      <section class="dossier-section">
+        <h2>Case File</h2>
+        <dl class="case-fields" id="caseFields">
+          <p class="empty-note" id="caseEmptyNote">Nothing on file yet. Tell SideEye what you're building.</p>
+        </dl>
+      </section>
+
+      <section class="dossier-section">
+        <h2>Mood</h2>
+        <div class="mood-buttons" id="moodButtons">
+          <button type="button" data-mood="acid">Acid</button>
+          <button type="button" data-mood="deadpan">Deadpan</button>
+          <button type="button" data-mood="soft">Soft</button>
+        </div>
+      </section>
+
+      <section class="dossier-section">
+        <h2>Quick actions</h2>
+        <div class="quick-actions">
+          <button type="button" data-quick="Roll a d20">Roll a d20</button>
+          <button type="button" data-quick="Flip a coin">Flip a coin</button>
+          <button type="button" data-quick="Tell me a joke">Tell me a joke</button>
+          <button type="button" data-quick="/help">Help</button>
+          <button type="button" data-quick="/reset" class="danger">Reset case file</button>
+        </div>
+      </section>
+
+      <section class="dossier-section">
+        <label class="reasoning-toggle">
+          <input type="checkbox" id="reasoningToggle" />
+          <span>Show how SideEye understood each message</span>
+        </label>
+      </section>
+    </aside>
+
+    <main class="chat-panel">
+      <div class="messages" id="messages"></div>
+
+      <div class="suggestions" id="suggestions"></div>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <input
+          type="text"
+          id="messageInput"
+          name="message"
+          placeholder="Tell SideEye what you're working on..."
+          autocomplete="off"
+        />
+        <button type="submit" id="sendButton">Send</button>
+      </form>
+    </main>
+
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
