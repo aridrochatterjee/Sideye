@@ -5,6 +5,8 @@ libraries, no third-party packages of any kind — just Python's standard
 library, SQLite, and old-fashioned programming logic (scored keyword
 matching, regexes, and a state machine).
 
+
+
 SideEye tracks what you're building, remembers it across messages (and
 across restarts, since it's all in a SQLite file), understands follow-up
 words like "it" and "them", asks natural follow-up questions, and can
