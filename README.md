@@ -14,8 +14,6 @@ canned replies.
 
 ## Running it
 
-
-
 You need Python 3.9+ and nothing else.
 
 ```bash
